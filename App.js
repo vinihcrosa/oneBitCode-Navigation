@@ -10,22 +10,22 @@ import AppContacts from './src/pages/AppContacts'
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
 
-function Tabs(){
+function Stacks(){
   return(
-    <Tab.Navigator>
-      <Tab.Screen name="AppContacts" component={AppContacts} />
-      <Tab.Screen name="Contacts" component={Contacts} />
-    </Tab.Navigator>
+    <Stack.Navigator>
+      <Stack.Screen name="AppContacts" component={AppContacts} />
+      <Stack.Screen name="Information" component={Information} />
+    </Stack.Navigator>
   )
 }
 
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name="AppContacts" component={Tabs}/>
-        <Stack.Screen name="Information" component={Information}/>
-      </Stack.Navigator>
+      <Tab.Navigator>
+        <Tab.Screen name="AppContacts" component={Stacks}/>
+        <Tab.Screen name="Contacts" component={Contacts} />
+      </Tab.Navigator>
     </NavigationContainer> 
   );
 }
